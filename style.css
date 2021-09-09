@@ -168,6 +168,8 @@ h1.datumort {
     transition: all 500ms ease-out;
     opacity: 1;
     max-height: 70vh;
+    pointer-events: none;
+
 }
 
 p {
@@ -309,6 +311,7 @@ p.infotext {
     }
     .infogrid{
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, min-content);
         gap: 20px;
         padding: 20px;
         align-content: inherit;
