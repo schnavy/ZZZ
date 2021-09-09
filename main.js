@@ -1,12 +1,11 @@
 function setup() {
 
 	createCanvas(
-		Math.floor(Math.max(window.innerWidth, window.innerHeight) / 8),
-		Math.floor(Math.max(window.innerWidth, window.innerHeight) / 8)
+		Math.floor(Math.max(screen.width, screen.height) / 8),
+		Math.floor(Math.max(screen.width, screen.height) / 8)
 	);
+	pixelDensity(1)
 	loadPixels();
-	background(0);
-	
 	var c = color(210, 255, 131);
 	
 	let yoff = 0;
@@ -24,7 +23,7 @@ function setup() {
 	}
 	updatePixels();
 	document.querySelector("#defaultCanvas0").classList.add("layer");
-	// noLoop();
+	noLoop();
 }
 
 window.onload = function () {
