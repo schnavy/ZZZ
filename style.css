@@ -48,7 +48,7 @@ body {
     height: 100vh;
     /* padding: 8px; */
     font-family: 'Monument Grotesk';
-    /* overflow: hidden; */
+    overflow: hidden;
     cursor: none;
 
 }
@@ -73,7 +73,8 @@ main {
     height: 100%; */
     border-radius: 0px;
     overflow: hidden;
-    transition: all 500ms cubic-bezier(0, .2, 0, 1);
+    /* transition: all 500ms cubic-bezier(0, .2, 0, 1); */
+    transition: all 200ms ease-out;
 }
 main{
     display: none;
@@ -272,9 +273,7 @@ p.infotext {
 
 
 @media(max-width: 900px) {
-    body{
-        overflow-y: scroll;
-    }
+
     h1 {
         font-size: 2em;
         letter-spacing: -0px;
@@ -304,10 +303,16 @@ p.infotext {
         height: 100%;
         background-size: 100% 100%;
         overflow: hidden;
+        transform: translateZ(0)
+
     }
     .mit-border{
         width: calc(100% - 14px);
         height: calc(100% - 14px);
+    }
+    #defaultCanvas0{
+        transform: scale(8);
+
     }
     .kreis {
         display: none;
@@ -317,6 +322,7 @@ p.infotext {
         grid-template-rows: repeat(3, min-content);
         gap: 20px;
         padding: 20px;
+        padding-bottom: 100px;
         align-content: inherit;
         z-index: 11;
         height: inherit;

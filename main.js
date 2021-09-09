@@ -1,13 +1,19 @@
-function setup() {
+let blurScale = 16;
+let mobile = false
+if (screen.width <= 900){
+	mobile = true
+	blurScale = 8;
+}
 
+function setup() {
 	createCanvas(
-		Math.floor(Math.max(screen.width, screen.height) / 8),
-		Math.floor(Math.max(screen.width, screen.height) / 8)
+		Math.floor(Math.max(screen.width, screen.height) / (blurScale / 2)),
+		Math.floor(Math.max(screen.width, screen.height) / (blurScale / 2))
 	);
-	pixelDensity(1)
+	pixelDensity(1);
 	loadPixels();
 	var c = color(210, 255, 131);
-	
+
 	let yoff = 0;
 	for (let y = 0; y < height; y++) {
 		let xoff = 0;
@@ -49,11 +55,11 @@ window.onload = function () {
 	setTimeout(() => {
 		frames.forEach((e) => {
 			e.classList.add("mit-border");
+			e.style.display = "block";
 		});
 		frames[0].classList.add("bgImage");
-
-		frames[1].style.display = "block";
 	}, 500);
+
 
 	document.addEventListener(
 		"scroll",
@@ -134,16 +140,16 @@ window.onload = function () {
 			frames.forEach((e) => {
 				e.classList.add("mit-border");
 			});
-			document.querySelectorAll("h1").forEach((e)=>{
-				e.style.display = "block"
-			})
+			document.querySelectorAll("h1").forEach((e) => {
+				e.style.display = "block";
+			});
 		} else {
 			frames.forEach((e) => {
 				e.classList.remove("mit-border");
 			});
-			document.querySelectorAll("h1").forEach((e)=>{
-				e.style.display = "none"
-			})
+			document.querySelectorAll("h1").forEach((e) => {
+				e.style.display = "none";
+			});
 			frames[0].classList.remove("bgImage", "mit-border");
 			infogrid.style.display = "grid";
 		}
@@ -171,10 +177,11 @@ window.onload = function () {
 	function changeFog() {
 		// let mx = map_value(x, 0, window.innerWidth, 0, 1000);
 		// let my = map_value(y, 0, window.innerHeight, 0, 1000);
-		let = rx = -(Math.random() * 800);
-		let = ry = -(Math.random() * 800);
+		let = rx = -(Math.random() * ((blurScale/2)*100));
+		let = ry = -(Math.random() * ((blurScale/2)*100));
 
-		canvas.style.transform = "translate(" + rx + "%, " + ry + "%) scale(16)";
+		canvas.style.transform =
+			"translate(" + rx + "%, " + ry + "%) scale(" + blurScale + ")";
 	}
 	function switchHidden(arr) {
 		arr[0].classList.toggle("hidden");
