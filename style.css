@@ -43,7 +43,7 @@
 }
 
 body {
-    background-color: #6b00cf;
+    background-color: #5f00b8;
     width: 100vw;
     height: 100vh;
     /* padding: 8px; */
@@ -106,6 +106,8 @@ h1 {
     letter-spacing: -2px;
     color: red;
     line-height: .9em;
+    text-shadow: 0px 0px 4px red ;
+
     /* text-shadow: 1px 1px 0 red,
     -1px 1px 0 red,
     1px -1px 0 red,
@@ -176,12 +178,14 @@ h1.datumort {
 p {
     z-index: 11;
     text-align: left;
-    font-size: 1.7em;
-    font-weight: 500;
+    font-size: 1.9em;
+    font-weight: 400;
     letter-spacing: 0px;
     line-height: 1.1em;
     color: #6b00cf;
     max-width: 90%;
+    text-shadow: 0px 0px 3px #6b00cf ;
+
 }
 /* 
 p.timetable {
@@ -206,7 +210,7 @@ p.infotext {
     grid-template-columns: 1fr 2fr;
     gap: 10px;
     padding: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     align-content: flex-end;
     z-index: 11;
 }
